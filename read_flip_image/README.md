@@ -33,7 +33,7 @@ other options:
 >**./image_flip ../sample.png ../flipped.png**
 
 
-📝 Note: replace '../sample.png' with the path of the input image
+⚠️ Note: replace '../sample.png' with the path of the input image
 
 # Example 💡
 
