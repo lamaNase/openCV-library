@@ -30,4 +30,7 @@ Note: replace '../sample.png' with the path of the input image
 
 ![flipped](https://github.com/user-attachments/assets/90298211-71ee-479c-9505-b89199ccbc48)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
