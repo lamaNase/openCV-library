@@ -1,22 +1,22 @@
-# Simple flipping image code
+# Simple convert image type code 🖼️ ⚫ ⚪ 🎨
 
-This small program perform flipping an input image using openCV
-library in C++. The program requires the user to enter the path
-of an input image and a path of an image where the flipped image
-will be aaved in.
+This small program perform reading colored image (with three) channels
+and prints its type. Then it convert this image into single channel image
+(greyscale image) and prints its type. The program recieve the path of the
+input image and saves the greyscale image with name 'greyImage.png'.
 
-# Flip options 🔧
 
-in my code I used the flip 1 as shown in the following line code
+# Command line output 🖥️
 
-> cv::flip(image, flipped_image, 1);
 
-this flipps the image horizontally
-other options:
-	- **0**: Flip vertically (around the x-axis).
-	- **1**: Flip horizontally (around the y-axis).
-	- **-1**: Flip both vertically and horizontally.
-	
+![Screenshot from 2024-08-06 20-44-41](https://github.com/user-attachments/assets/99393669-6a78-4474-8c94-5a7d60b99aee)
+
+
+📝 Note: 
+
+- 16 means the type CV_8UC3:8-bit unsigned 3 channels.
+- 0 means the type CV_8UC1: 8-bit unsigned single channel.
+
 # How can you run the code ❓
 
 ### You can run the program through executing the following commands:
@@ -32,19 +32,15 @@ other options:
 >**./image_types_channels ../sample.png**
 
 
-📝 Note: replace '../sample.png' with the path of the input image
+⚠️ Note: replace '../sample.png' with the path of the input image
 
 # Example 💡
 
-## input image 🖼️
+## input image (colord image) 🎨
 
 ![sample](https://github.com/user-attachments/assets/1e25bdf4-724d-4b9e-bb18-6eb15917d884)
 
-## flipped image 🔁
+## greyscaled image 🌑
 
-![flipped](https://github.com/user-attachments/assets/90298211-71ee-479c-9505-b89199ccbc48)
+![greyImage](https://github.com/user-attachments/assets/33f07506-9507-42a4-96a0-971065cc522d)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
