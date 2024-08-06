@@ -1,0 +1,3 @@
+/home/lama/Desktop/Training/openCV/merge_split/build/CMakeFiles/merge_split.dir
+/home/lama/Desktop/Training/openCV/merge_split/build/CMakeFiles/edit_cache.dir
+/home/lama/Desktop/Training/openCV/merge_split/build/CMakeFiles/rebuild_cache.dir

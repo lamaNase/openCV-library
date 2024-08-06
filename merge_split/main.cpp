@@ -4,11 +4,8 @@
 int main() {
     // Create three single-channel images (each with a different color)
     cv::Mat channel1(256, 256, CV_8UC1, cv::Scalar(255)); // White
-    cv::Mat channel2(256, 256, CV_8UC1, cv::Scalar(0));   // Black
+    cv::Mat channel2(256, 256, CV_8UC1, cv::Scalar(255));   // white
     cv::Mat channel3(256, 256, CV_8UC1, cv::Scalar(0));   // Black
-
-    // Modify one channel to represent a different color
-    channel2.setTo(cv::Scalar(255)); // Set the second channel to white
 
     // Combine the three channels into one multi-channel image (BGR format)
     std::vector<cv::Mat> channels = { channel1, channel2, channel3 };
