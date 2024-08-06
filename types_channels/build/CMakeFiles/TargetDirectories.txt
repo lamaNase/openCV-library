@@ -1,3 +1,0 @@
-/home/lama/Desktop/Training/openCV/types_channels/build/CMakeFiles/image_types_channels.dir
-/home/lama/Desktop/Training/openCV/types_channels/build/CMakeFiles/edit_cache.dir
-/home/lama/Desktop/Training/openCV/types_channels/build/CMakeFiles/rebuild_cache.dir
