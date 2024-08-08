@@ -30,5 +30,5 @@ specific technique on the video frams as follow:
 # Example 💡
 
 
-https://github.com/user-attachments/assets/f93d5347-6863-4347-a7d5-1cfdb5166417
+https://github.com/user-attachments/assets/bf6a9737-b0b6-4063-8a33-3da91d19c08a
 
