@@ -32,6 +32,9 @@ specific technique on the video frams as follow:
 
 [Screencast from 08-10-2024 10:12:10 PM.webm](https://github.com/user-attachments/assets/219e63be-2cd9-4d72-bd20-2e6605a4c56a)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 
 
