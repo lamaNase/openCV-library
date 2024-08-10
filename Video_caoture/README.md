@@ -30,6 +30,7 @@ specific technique on the video frams as follow:
 # Example 💡
 
 
-[Screencast from 08-10-2024 10:12:10 PM.webm](https://github.com/user-attachments/assets/ef149afd-0015-47f4-ad42-58db32baaae6)
+[Screencast from 08-10-2024 10:12:10 PM.webm](https://github.com/user-attachments/assets/219e63be-2cd9-4d72-bd20-2e6605a4c56a)
+
 
 
