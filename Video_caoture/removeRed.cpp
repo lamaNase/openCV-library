@@ -3,12 +3,16 @@ void removeRedChannel() {
     	int frameIndex = 0;
     	
     	while (isRunning) {
+        	
         	cv::Mat frame;
-        	{
-        	    std::lock_guard<std::mutex> lock(frameMutex);
-        	    if (sharedFrame.empty()) continue;
-        	    frame = sharedFrame.clone();
-        	}
+		std::unique_lock<std::mutex> lock(bufferMutex);
+		
+        	if (!frameBuffer.empty() && frameBuffer.size() > frameIndex) {
+        		frame = frameBuffer.at(frameIndex);
+        		frameIndex++;
+		} else 
+			continue;
+        	
 	
 	        std::vector<cv::Mat> channels;
 	        cv::split(frame, channels); // Split the frame into its channels
@@ -18,15 +22,17 @@ void removeRedChannel() {
 	        cv::merge(channels, frame); // Merge the channels back together
 	
 		// Print the frame index on the image
-        	std::string text = "Frame: " + std::to_string(frameIndex++);
+        	std::string text = "Remove Red Channel, ";
+        	text += "Frame: " + std::to_string(frameIndex++);
         	cv::putText(frame, text, cv::Point(30, 30), cv::FONT_HERSHEY_SIMPLEX, 
         		1, cv::Scalar(255, 255, 255), 2);
 	
-	        cv::imshow("No Red Channel Video", frame); // Display the frame
-	
-	        if (cv::waitKey(30) >= 0) break; // Exit on any key press
+		{
+        	    std::unique_lock<std::mutex> lock(frame4Mutex);
+        	    frame4 = frame.clone();
+        	}
+		
+		if (cv::waitKey(30) >= 0) break;
 	    }
-	    
-	    cv::destroyAllWindows();
 }
 

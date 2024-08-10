@@ -2,25 +2,31 @@
 void displayVideo() {
 	int frameIndex = 0;
     	while (isRunning) {
-    	
-		cv::Mat frame;
-        	{
-        	    std::lock_guard<std::mutex> lock(frameMutex);
-        	    if (sharedFrame.empty()) continue;
-        	    frame = sharedFrame.clone();
-        	}
+    		
+    		cv::Mat frame;
+		std::unique_lock<std::mutex> lock(bufferMutex);
+		
+        	if (!frameBuffer.empty() && frameBuffer.size() > frameIndex) {
+        		frame = frameBuffer.at(frameIndex);
+        		frameIndex++;
+		} else 
+			continue;
+        	
         
         	// Print the frame index on the image
-        	std::string text = "Frame: " + std::to_string(frameIndex++);
+        	std::string text = "Display, ";
+        	text += "Frame: " + std::to_string(frameIndex++);
         	cv::putText(frame, text, cv::Point(30, 30), cv::FONT_HERSHEY_SIMPLEX, 
         		1, cv::Scalar(255, 255, 255), 2);
 	
-        	cv::imshow("Display Video", frame); // Display the frame
-	
-	        if (cv::waitKey(30) >= 0) break; // Exit on any key press
+        	// Lock the mutex for frame1 before writing to it
+        	{
+        	    std::unique_lock<std::mutex> lock(frame1Mutex);
+        	    frame1 = frame.clone();
+        	}
+        	
+        	
+		if (cv::waitKey(30) >= 0) break;
 	}
-	    
-	isRunning = false;
-	cv::destroyAllWindows();
 }
 
