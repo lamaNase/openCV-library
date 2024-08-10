@@ -27,12 +27,9 @@ specific technique on the video frams as follow:
 ⚠️ Note: press any key on the kryboard to stop the running of the program
 
 
-<<<<<<< HEAD
 # Example 💡
 
 
-https://github.com/user-attachments/assets/f93d5347-6863-4347-a7d5-1cfdb5166417
+[Screencast from 08-10-2024 10:12:10 PM.webm](https://github.com/user-attachments/assets/ef149afd-0015-47f4-ad42-58db32baaae6)
 
 
-=======
->>>>>>> origin/main
