@@ -6,6 +6,7 @@
 
 
 void captureFrame(cv::VideoCapture& cap) {
+    int frameIndex = 0;
     while (isRunning) {
         cv::Mat frame;
         cap >> frame;
@@ -15,8 +16,8 @@ void captureFrame(cv::VideoCapture& cap) {
         }
 
         std::unique_lock<std::mutex> lock(bufferMutex);
-        
-        frameBuffer.push_back(frame.clone());
+        frameBuffer.push_back(std::make_pair(frame.clone(),frameIndex));
+        frameIndex++;
     }
 }
 
@@ -32,24 +33,24 @@ void showFramesInSections() {
     while (isRunning) {
     	
     	cv::Mat resizedFrame1, resizedFrame2, resizedFrame3, resizedFrame4;
-    	if (!frame1.empty()) {
-    		std::unique_lock<std::mutex> lock(frame1Mutex);
-    		cv::resize(frame1, resizedFrame1, cv::Size(width, height));
+    	if (!display.empty()) {
+    		std::unique_lock<std::mutex> lock(displayMutex);
+    		cv::resize(display, resizedFrame1, cv::Size(width, height));
     		resizedFrame1.copyTo(combinedDisplay(cv::Rect(0, 0, width, height)));
     	}
-    	if (!frame2.empty()) {
-    		std::unique_lock<std::mutex> lock(frame2Mutex);
-    		cv::resize(frame2, resizedFrame2, cv::Size(width, height));
+    	if (!flip.empty()) {
+    		std::unique_lock<std::mutex> lock(flipMutex);
+    		cv::resize(flip, resizedFrame2, cv::Size(width, height));
     		resizedFrame2.copyTo(combinedDisplay(cv::Rect(width, 0, width, height)));
     	}
-    	if (!frame3.empty()) {
-    		std::unique_lock<std::mutex> lock(frame3Mutex);
-    		cv::resize(frame3, resizedFrame3, cv::Size(width, height));
+    	if (!rotate.empty()) {
+    		std::unique_lock<std::mutex> lock(rotateMutex);
+    		cv::resize(rotate, resizedFrame3, cv::Size(width, height));
     		resizedFrame3.copyTo(combinedDisplay(cv::Rect(0, height, width, height)));
     	}
-    	if (!frame4.empty()) {
-    		std::unique_lock<std::mutex> lock(frame4Mutex);
-    		cv::resize(frame4, resizedFrame4, cv::Size(width, height));
+    	if (!removeRed.empty()) {
+    		std::unique_lock<std::mutex> lock(removeRedMutex);
+    		cv::resize(removeRed, resizedFrame4, cv::Size(width, height));
     		resizedFrame4.copyTo(combinedDisplay(cv::Rect(width, height, width, height)));
     	}
     	// Show the combined display
