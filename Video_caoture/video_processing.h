@@ -13,9 +13,8 @@ std::mutex bufferMutex;
 std::atomic<bool> isRunning(true);
 
 // Frames
-cv::Mat frame1, frame2, frame3, frame4;
-std::mutex frame1Mutex, frame2Mutex, frame3Mutex, frame4Mutex;
-
+cv::Mat display, flip, rotate, removeRed;
+std::mutex displayMutex, flipMutex, rotateMutex, removeRedMutex;
 
 // Function declarations
 void captureFrame(cv::VideoCapture& cap);
