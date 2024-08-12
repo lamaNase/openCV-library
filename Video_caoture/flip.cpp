@@ -1,7 +1,10 @@
 void flipVideo() {
 	int index = 0;
 	while (isRunning) {
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/main
 		int frameIndex;
 		cv::Mat flippedFrame;
         	cv::Mat frame;

@@ -2,7 +2,10 @@
 void displayVideo() {
 	int index = 0;
     	while (isRunning) {
+<<<<<<< HEAD
     		
+=======
+>>>>>>> origin/main
     		int frameIndex;
     		cv::Mat frame;
 		std::unique_lock<std::mutex> lock(bufferMutex);
@@ -31,4 +34,3 @@ void displayVideo() {
 		//if (cv::waitKey(30) >= 0) break;
 	}
 }
-

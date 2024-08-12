@@ -3,7 +3,10 @@ void rotateVideo(double angle) {
 	int index = 0;
 	
 	while (isRunning) {
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/main
 		int frameIndex;
 		cv::Mat rotatedFram;
         	cv::Mat frame;

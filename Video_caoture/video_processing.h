@@ -31,12 +31,15 @@ int height = 300;
 // Frames
 cv::Mat display, flip, rotate, removeRed;
 std::mutex displayMutex, flipMutex, rotateMutex, removeRedMutex;
+<<<<<<< HEAD
 
 // Qimage that will be shown on the window
 QImage qimage;
 std::mutex imageMutex;
 cv::Mat combinedDisplay(height * 2, width * 2, CV_8UC3, cv::Scalar(0, 0, 0));
 
+=======
+>>>>>>> origin/main
 
 // Function declarations
 void captureFrame(cv::VideoCapture cap);
