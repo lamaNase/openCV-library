@@ -2,10 +2,6 @@
 void displayVideo() {
 	int index = 0;
     	while (isRunning) {
-<<<<<<< HEAD
-    		
-=======
->>>>>>> origin/main
     		int frameIndex;
     		cv::Mat frame;
 		std::unique_lock<std::mutex> lock(bufferMutex);

@@ -60,11 +60,11 @@ void showFramesInSections(int argc, char *argv[]) {
     qimage.fill(Qt::white);
     
     // Create a large image to hold all sections
-    combinedDisplay = cv::Mat::zeros(height * 2, width * 2, CV_8UC3);  // 2x2 grid
+    //combinedDisplay = cv::Mat::zeros(height * 2, width * 2, CV_8UC3);  // 2x2 grid
     
     // Create a main window
     QWidget window;
-    window.setWindowTitle("Beautiful Play/Pause Interface");
+    window.setWindowTitle("Real-Time Video Manipulation");
     window.resize(height * 2, width * 2);
 
     // Set a background color
