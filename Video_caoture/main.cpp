@@ -27,24 +27,20 @@ void captureFrame(cv::VideoCapture cap) {
 }
 
 void makeThreads(cv::VideoCapture cap, double angle) {
-	QThread *captureThread = QThread::create([&cap]() {
-        	captureFrame(cap);
-    	});
-    	captureThread->start();
+    	std::thread captureThread(captureFrame, cap);
 	std::thread displayThread(displayVideo);
 	std::thread flipThread(flipVideo);
 	std::thread rotateThread(rotateVideo, angle);
 	std::thread removeRedThread(removeRedChannel);
 	std::thread updateFramesThread(updateFrames);
 	
-	captureThread->wait();
+	captureThread.join();
 	displayThread.join();
 	flipThread.join();
 	rotateThread.join();
 	removeRedThread.join();
 	updateFramesThread.join();
 	
-	delete captureThread;
 }
 
 
